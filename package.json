@@ -1,0 +1,1 @@
+{"name":"regent-route-reliability","private":true,"type":"module","scripts":{"data":"node scripts/build_data.mjs","test":"node --test test/*.test.js"}}

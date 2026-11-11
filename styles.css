@@ -1,0 +1,68 @@
+/* regentcraft.com tokens (Webflow shared CSS): --dark-blue #002b49, --navy-blue #0b506d, --blue #27647f,
+   --light-blue #00a9e0, --light #88dbdf, #fafafa / #f5f5f5 surfaces, accent orange #f0652f.
+   Fonts: Avenir Next (site) with Nunito Sans as the web fallback; Bebas Neue Pro for small caps labels. */
+:root { --dark: #002b49; --navy: #0b506d; --blue: #27647f; --sky: #00a9e0; --aqua: #88dbdf; --bg: #f5f5f5; --card: #fff; --ink: #0d2236; --muted: #5d6c7b; --line: #d9dee3; --orange: #f0652f; }
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { font-family: 'Avenir Next', 'Nunito Sans', Avenir, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); background: var(--bg); font-size: 15px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+.rg-wrap { max-width: 1160px; margin: 0 auto; }
+.rg-top { background: radial-gradient(1200px 400px at 70% -10%, #0b506d 0%, #002b49 60%); color: #fff; padding-bottom: 34px; }
+.rg-top__inner { display: flex; align-items: center; height: 76px; gap: 40px; }
+.rg-logo img { height: 28px; display: block; }
+.rg-nav { display: flex; gap: 40px; margin-left: auto; }
+.rg-nav a { color: #fff; text-decoration: none; font-size: 16px; font-weight: 500; }
+.rg-nav a.is-active { color: var(--sky); }
+.rg-op { font-size: 12px; border: 1px solid rgba(255,255,255,.35); border-radius: 999px; padding: 4px 12px; color: #cfe6f0; }
+.rg-hero { padding-top: 26px; }
+.rg-eyebrow { color: var(--sky); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; font-size: 13px; }
+.rg-hero h1 { font-size: 40px; font-weight: 500; margin: 6px 0 8px; letter-spacing: -.005em; }
+.rg-hero p { margin: 0; max-width: 820px; color: #cfe1ea; font-size: 17px; }
+
+.rg-main { padding: 24px 0 8px; }
+.rg-controls { display: flex; gap: 34px; align-items: flex-end; background: var(--card); border-radius: 16px; padding: 16px 20px; box-shadow: 0 1px 2px rgba(0,43,73,.08); }
+.rg-controls label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: var(--muted); }
+.rg-controls label b { color: var(--blue); }
+.rg-controls select { font: 500 15px inherit; font-family: inherit; border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; background: #fff; color: var(--ink); }
+.rg-controls input[type=range] { width: 170px; accent-color: var(--sky); }
+.rg-assume { margin: 0 0 0 auto; max-width: 330px; font-size: 12px; color: var(--muted); }
+
+.rg-kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 16px 0; }
+.rg-kpi { background: var(--card); border-radius: 16px; padding: 16px 18px; box-shadow: 0 1px 2px rgba(0,43,73,.08); }
+.rg-kpi--dark { background: var(--dark); color: #fff; }
+.rg-kpi__label { font-size: 13px; font-weight: 600; color: var(--muted); }
+.rg-kpi--dark .rg-kpi__label { color: var(--aqua); }
+.rg-kpi__value { font-size: 34px; font-weight: 600; line-height: 1.15; margin-top: 4px; }
+.rg-kpi__value small { font-size: 16px; font-weight: 500; }
+.rg-kpi__cmp { font-size: 13px; color: var(--muted); margin-top: 2px; }
+.rg-kpi--dark .rg-kpi__cmp { color: #cfe1ea; }
+.rg-kpi__cmp b { font-weight: 700; }
+
+.rg-grid { display: grid; grid-template-columns: 1.08fr 1fr; gap: 16px; }
+.rg-card { background: var(--card); border-radius: 16px; padding: 18px 20px; box-shadow: 0 1px 2px rgba(0,43,73,.08); }
+.rg-card__head { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px; }
+.rg-card h2 { font-size: 19px; font-weight: 600; margin: 0; color: var(--dark); }
+.rg-replay { display: flex; gap: 6px; align-items: center; }
+.rg-replay select { font: inherit; font-size: 13px; border: 1px solid var(--line); border-radius: 8px; padding: 4px 6px; }
+.rg-replay button { border: 1px solid var(--line); background: #fff; border-radius: 999px; width: 28px; height: 28px; cursor: pointer; font-size: 16px; color: var(--blue); }
+.rg-tabs { display: flex; gap: 6px; }
+.rg-tab { border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 5px 12px; font: inherit; font-size: 12px; font-weight: 600; color: var(--blue); cursor: pointer; }
+.rg-tab.is-active { background: var(--sky); border-color: var(--sky); color: #fff; }
+.rg-map svg { width: 100%; height: auto; display: block; border-radius: 12px; }
+.rg-map text { font-family: inherit; }
+.rg-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 12px; }
+.rg-table th { text-align: right; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 600; padding: 6px 6px; border-bottom: 1px solid var(--line); }
+.rg-table td { text-align: right; padding: 6px 6px; border-bottom: 1px solid #eef1f3; font-variant-numeric: tabular-nums; }
+.rg-table th:first-child, .rg-table td:first-child { text-align: left; }
+.rg-mode { display: inline-block; border-radius: 999px; padding: 1px 9px; font-size: 12px; font-weight: 700; }
+.rg-mode--wing { background: #e0f5fc; color: #006f96; }
+.rg-mode--foil { background: #e6f1f4; color: var(--blue); }
+.rg-mode--hull { background: #fdeee7; color: #b34519; }
+.rg-bad { color: var(--orange); font-weight: 700; }
+.rg-note { font-size: 13px; color: var(--muted); margin: 10px 0 0; }
+.rg-heat svg { width: 100%; height: auto; display: block; }
+.rg-heat text { font-family: inherit; font-size: 10.5px; fill: var(--muted); }
+.rg-table--cmp td:first-child { font-weight: 600; }
+.rg-table--cmp tr.is-us td { color: var(--dark); background: #eef9fd; }
+.rg-foot { background: var(--dark); color: #cfe1ea; font-size: 12px; margin-top: 22px; }
+.rg-foot__inner { display: flex; justify-content: space-between; padding: 16px 0; gap: 20px; }
+.rg-foot a { color: var(--sky); }

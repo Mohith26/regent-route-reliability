@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Route Planner | REGENT Operator Portal (concept)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="rg-top">
+    <div class="rg-wrap rg-top__inner">
+      <a href="#" class="rg-logo"><img src="assets/regent-logo.svg" alt="REGENT" /></a>
+      <nav class="rg-nav">
+        <a href="#">Fleet</a>
+        <a href="#" class="is-active">Routes</a>
+        <a href="#">Schedule</a>
+        <a href="#">Crew</a>
+        <a href="#">Support</a>
+      </nav>
+      <span class="rg-op">Operator portal</span>
+    </div>
+    <div class="rg-wrap rg-hero">
+      <div class="rg-eyebrow">Route study</div>
+      <h1>Honolulu to Maui, every 2025 departure</h1>
+      <p>Each departure from 06:00 to 19:00 HST is planned leg by leg (route, and wing, foil or hull mode) and then flown against what the sea actually did, using NOAA buoy observations along both routes.</p>
+    </div>
+  </header>
+
+  <main class="rg-main">
+    <div class="rg-wrap">
+      <section class="rg-controls">
+        <label>In-flight mode-drop target
+          <select id="riskSel"><option value="0.002">0.2% of flights</option><option value="0.005">0.5% of flights</option><option value="0.01" selected>1% of flights</option><option value="0.02">2% of flights</option></select>
+        </label>
+        <label>Take-off limit <b id="tkoVal"></b>
+          <input type="range" id="tkoSel" min="0.75" max="2" step="0.25" value="1.25" />
+        </label>
+        <label>Wing-borne cruise limit <b id="wingVal"></b>
+          <input type="range" id="wingSel" min="2" max="4" step="0.25" value="3" />
+        </label>
+        <label>Foil limit <b id="foilVal"></b>
+          <input type="range" id="foilSel" min="1" max="2" step="0.25" value="1.5" />
+        </label>
+        <p class="rg-assume">Limits are significant wave height. Defaults: take-off in sea state 3 (1.25 m), foil ~5 ft and hull ~3 ft as REGENT has described publicly; the 3.0 m cruise limit is my assumption. Range 156 nm at 156 kn, 20% reserve.</p>
+      </section>
+
+      <section class="rg-kpis" id="kpis"></section>
+
+      <div class="rg-grid">
+        <section class="rg-card">
+          <div class="rg-card__head"><h2>Replay a departure</h2><div class="rg-replay"><button id="prevBtn" aria-label="Previous">&#8249;</button><select id="daySel"></select><select id="hourSel"></select><button id="nextBtn" aria-label="Next">&#8250;</button></div></div>
+          <div class="rg-map" id="map"></div>
+          <table class="rg-table" id="legTable"></table>
+          <p class="rg-note" id="replayNote"></p>
+        </section>
+        <section class="rg-card">
+          <div class="rg-card__head"><h2>Completed by month and hour</h2><div class="rg-tabs" id="heatTabs"></div></div>
+          <div class="rg-heat" id="heat"></div>
+          <table class="rg-table rg-table--cmp" id="cmpTable"></table>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="rg-foot">
+    <div class="rg-wrap rg-foot__inner">
+      <span>Unofficial concept demo by Mohith Gajjela. Not affiliated with REGENT. Public data from NOAA NDBC (stations 51211, 51202, 51213, 51205); operating limits assumed.</span>
+      <a href="https://github.com/Mohith26/regent-route-reliability">How it works</a>
+    </div>
+  </footer>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
